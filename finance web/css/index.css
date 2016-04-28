@@ -48,21 +48,48 @@ a:hover{ text-decoration:underline;}
 .content  .fast{position: absolute;top:30px;left:600px;clear:both;float:left;}
 .content .bodyRight{position: absolute;top:25px;left:724px;}
 
-.main{background: #eeeeee;width:100%;height:2000px;padding-top: 22px;}
-.main .house{}
-.main .house .title{width:220px;height:44px;font-size: 18px;background: #fff;line-height: 44px;padding-left: 20px;border:1px solid #f0f0f0}
+.main{background: #eeeeee;width:100%;height:3000px;padding-top: 22px;}
+.main .house{margin-bottom: 130px;}
+.main  .title{width:220px;height:44px;font-size: 18px;background: #fff;line-height: 44px;padding-left: 20px;border:1px solid #f0f0f0}
 .main .house .hLeft{height:44px;width:240px;border-top: 4px solid #48cfad;float:left;}
 .main h1{font-size:24px;font-weight: normal;padding-bottom: 12px;}
 .main .detail{height:43px;width: 220px;font-size: 14px;background: #fff;border:1px solid #f0f0f0;line-height: 43px;padding-left: 20px;position: relative;}
-.main .d2{position:absolute;left:110px;}
-.main .d1{position:absolute;left:176px;}
+.main .house .d2{position:absolute;left:110px;}
+.main .house .d1{position:absolute;left:176px;}
 .main .active{background:#f7f7f7; }
 .main .detail:hover{background:#f7f7f7; }
 
-.main .hMiddle{position:relative;left:10px;top:3px;width:490px;height:309px;border-top:3px solid #48cfad;float:left;}
+.main .hMiddle{position:relative;left:10px;width:490px;height:316px;border-top:4px solid #48cfad;float:left;background:#fff;}
 .main .hTab{padding-bottom: 22px;}
 .main .hMt1{padding-left: 16px;}
-.main li{font-size: 14px;}
+.main .hMt2{position: absolute;top:26px;left:260px;}
+.main .hMt3{position: absolute;top:176px;left:260px;}
+.main a{color:#333333;}
+.main li{font-size: 14px;   line-height: 24px;}
+
+.main .hRight{float:left;position: relative;left:20px;border-top:4px solid #48cfad;}
+.main .hRight img{position: relative;top:20px;left:20px;z-index: 1;}
+.main .cal{position: absolute;top:44px;}
+.main .houseCal,.taxCal,.rong{height:59px;width:161px;background: #fff;padding-top:30px;padding-left: 80px;border:1px solid #f0f0f0;}
+.main .houseCal:hover{background:#f7f7f7;}
+.taxCal:hover{background:#f7f7f7;}
+.rong:hover{background:#f7f7f7;}
+
+.main .card{padding-top: 132px;clear:both;}
+.main .cLeft{width:241px;border-top: 4px solid #4fc1e9;float: left;}
+.main .card .d2{position:absolute;left:44px;}
+.main .card .d1{position:absolute;left:170px;}
+.main .card .d3{position: absolute;left:134px;}
+.main .card .detail{height:34px;line-height: 34px;font-size: 14px;color:#222222;}
+
+.main .card .cMiddle{position:relative;left:10px;width:490px;height:297px;border-top:4px solid #4fc1e9;float:left;background:#fff;}
+.main .card .cTitle{width:470px;height:44px;font-size: 18px;background: #fff;line-height: 44px;padding-left: 20px;border:1px solid #f0f0f0}
+.main .cImg{float:left;padding:24px 0 0 18px;text-align: center;font-size: 16px;color:#666666;}
+.main .cT1{position: absolute;top:196px;left:16px;font-size: 14px;}
+.main .cT1 a{text-decoration: none;}
+.main .cT1 a:hover{color: #0055bb}
+.main .cT2{position: absolute;top:196px;left:254px;font-size: 14px;}
+.main .cRight{float:left;}
 /*.content .tab .person{background: url(../images/tab.jpg) no-repeat left 30px 20px;color:#000;}*/
 
 
