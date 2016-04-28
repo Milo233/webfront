@@ -1,0 +1,94 @@
+@charset "utf-8";
+/*     理财网站-20160427    */
+
+/*    reset    */
+body,ul,p,h1,h2,h3,h4,dl,dd,form,input,textarea,select{
+    padding:0;margin:0;font-size: 12px;
+}
+img{border:none;}/*去掉图片链接的蓝色边框*/
+ul{padding-left: 0;/* 去除ul左边距*/   margin:0;/* for IE6*/}
+li{list-style: none;/* 去除小黑点*/}
+a{text-decoration: none;}/*链接去下划线*/
+a:hover{ text-decoration:underline;}
+
+/*   end  reset    */
+
+/*   public      */
+.wrap{width:990px;margin:0 auto;}
+.header{height:80px;position: relative;}
+.header .logo{top:16px;position: relative;float:left;}
+.header .city{float:left;position: relative;top:20px;left:15px;font-size: 14px;line-height: 20px;}
+.header .call{float:right;position: relative;}
+.header .nav{clear:both;float:right;position: absolute;bottom:0;right:0;border:1px solid #e5e5e5;}
+.header .call li{float:left;padding-left: 10px;padding-right: 10px;padding-top: 14px;color:#888888}
+.header .nav li{float:left;width:86px;height:38px;text-align: center;line-height:38px;background:#efefef;font-size: 18px;border:1px solid #e5e5e5;}
+.header .nav a{color:#000;text-decoration: none;}
+.header .nav .active{background:#3a6dbf;color:#fff}
+.header .nav li:hover{background:#3a6dbf;color:#fff;}
+
+.content{height:326px;background: url(../images/bg.jpg) repeat-x;}
+.content .body{height:326px;position: relative;}
+.content .bodyLeft{height:284px;width:700px;background:#fff;position: relative;top:25px;float:left;}
+.content .tab{width:169px;float: left;}
+.content .tab{border:1px solid #e6e6e6;}
+.content .tab li{height:45px;line-height: 45px;font-size: 16px;padding-left: 40px;background: #f6f6f6;border:1px solid #e6e6e6;}
+.content .tab .active{background: #fff;}
+.content .tab li:hover{background: #fff;}
+
+.content .search{position:relative;top:17px;left:36px;font-size: 14px;line-height: 52px;}
+.content select{width:300px;height:28px;position: relative;top:-126px;left:100px;margin-bottom: 24px;font-size: 14px;
+}
+.content button{position: absolute;width:300px;height:30px;border:1px solid #92856a;top:186px;left:270px;}
+
+.content .hot{position: absolute;top:240px;left:200px;
+    width: 500px;}
+.content .hot p{float: left;}
+.hot a{color:#0055bb;}
+.content .hot li{float: left;padding-left: 10px;padding-right: 4px;}
+.content  .fast{position: absolute;top:30px;left:600px;clear:both;float:left;}
+.content .bodyRight{position: absolute;top:25px;left:724px;}
+
+.main{background: #eeeeee;width:100%;height:2000px;padding-top: 22px;}
+.main .house{}
+.main .house .title{width:220px;height:44px;font-size: 18px;background: #fff;line-height: 44px;padding-left: 20px;border:1px solid #f0f0f0}
+.main .house .hLeft{height:44px;width:240px;border-top: 4px solid #48cfad;float:left;}
+.main h1{font-size:24px;font-weight: normal;padding-bottom: 12px;}
+.main .detail{height:43px;width: 220px;font-size: 14px;background: #fff;border:1px solid #f0f0f0;line-height: 43px;padding-left: 20px;position: relative;}
+.main .d2{position:absolute;left:110px;}
+.main .d1{position:absolute;left:176px;}
+.main .active{background:#f7f7f7; }
+.main .detail:hover{background:#f7f7f7; }
+
+.main .hMiddle{position:relative;left:10px;top:3px;width:490px;height:309px;border-top:3px solid #48cfad;float:left;}
+.main .hTab{padding-bottom: 22px;}
+.main .hMt1{padding-left: 16px;}
+.main li{font-size: 14px;}
+/*.content .tab .person{background: url(../images/tab.jpg) no-repeat left 30px 20px;color:#000;}*/
+
+
+/*   end public    */
+
+/*   index   */
+/*   end index   */
+
+/*   loan   */
+/*   end loan   */
+
+/*   car   */
+/*   end car  */
+
+/*   house   */
+/*   end house   */
+
+/*   card   */
+/*   end card   */
+
+/*   financial   */
+/*   end financial   */
+
+/*   bbs   */
+/*   end bbs   */
+
+/*   news   */
+/*   end news   */
+
