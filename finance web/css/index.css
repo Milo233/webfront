@@ -42,13 +42,13 @@ a:hover{ text-decoration:underline;}
 
 .content .hot{position: absolute;top:240px;left:200px;
     width: 500px;}
-.content .hot p{float: left;}
+.content .hot p{float: left;position: relative;top:0;}
 .hot a{color:#0055bb;}
 .content .hot li{float: left;padding-left: 10px;padding-right: 4px;}
 .content  .fast{position: absolute;top:30px;left:600px;clear:both;float:left;}
 .content .bodyRight{position: absolute;top:25px;left:724px;}
 
-.main{background: #eeeeee;width:100%;height:3000px;padding-top: 22px;}
+.main{background: #eeeeee;width:100%;height:2140px;padding-top: 22px;}
 .main .house{margin-bottom: 130px;}
 .main  .title{width:220px;height:44px;font-size: 18px;background: #fff;line-height: 44px;padding-left: 20px;border:1px solid #f0f0f0}
 .main .house .hLeft{height:44px;width:240px;border-top: 4px solid #48cfad;float:left;}
@@ -68,12 +68,14 @@ a:hover{ text-decoration:underline;}
 .main li{font-size: 14px;   line-height: 24px;}
 
 .main .hRight{float:left;position: relative;left:20px;border-top:4px solid #48cfad;}
-.main .hRight img{position: relative;top:20px;left:20px;z-index: 1;}
+.main .hRight img{position: relative;top:26px;left:20px;z-index: 1;}
 .main .cal{position: absolute;top:44px;}
 .main .houseCal,.taxCal,.rong{height:59px;width:161px;background: #fff;padding-top:30px;padding-left: 80px;border:1px solid #f0f0f0;}
 .main .houseCal:hover{background:#f7f7f7;}
 .taxCal:hover{background:#f7f7f7;}
 .rong:hover{background:#f7f7f7;}
+#wechat{position:relative;left:40px;top:-20px;display:none;}
+
 
 .main .card{padding-top: 132px;clear:both;}
 .main .cLeft{width:241px;border-top: 4px solid #4fc1e9;float: left;}
@@ -84,12 +86,57 @@ a:hover{ text-decoration:underline;}
 
 .main .card .cMiddle{position:relative;left:10px;width:490px;height:297px;border-top:4px solid #4fc1e9;float:left;background:#fff;}
 .main .card .cTitle{width:470px;height:44px;font-size: 18px;background: #fff;line-height: 44px;padding-left: 20px;border:1px solid #f0f0f0}
-.main .cImg{float:left;padding:24px 0 0 18px;text-align: center;font-size: 16px;color:#666666;}
 .main .cT1{position: absolute;top:196px;left:16px;font-size: 14px;}
 .main .cT1 a{text-decoration: none;}
-.main .cT1 a:hover{color: #0055bb}
+.main .cT1 a:hover{color: #0055bb;}
 .main .cT2{position: absolute;top:196px;left:254px;font-size: 14px;}
-.main .cRight{float:left;}
+.main .cT3{position: absolute;top:46px;left:0;font-size: 14px;background: #fff;width:220px;height:231px;padding: 24px 0 0 20px;border-top: 1px solid #f0f0f0;}
+.main .cRight{float:left;position:relative;left:20px;height:304px;}
+.main .cRt{width:220px;height:44px;font-size: 18px;border-top:4px solid #4fc1e9;background: #fff;line-height: 44px;padding-left: 20px;}
+.main .cImg{float:left;padding:24px 0 0 18px;text-align: center;font-size: 16px;color:#666666;}
+.main .cImg2{float:left;top:170px;left:24px;text-align: center;font-size: 16px;color:#666666;position: relative;}
+.main a{text-decoration: none;}
+.main a:hover{color:#0055bb;}
+.main .lookup{position:absolute;top:274px;left:4px;}
+.main .lookup span{padding-left: 18px;}
+
+
+.main .loan{clear:both;padding-top: 132px;}
+.main .loan .lLeft{width:218px;height:284px;background: #fff;border-top:4px solid #5d9cec;padding:24px 0 0 22px;float: left;}
+.main .loan .name,.number{width:184px;height:34px;border:1px solid #eeeeee;border-radius: 8px;margin-bottom:18px;padding-left:1em; color:#767676;}
+.main .loan .pic,.message{width:82px;height:34px;border-radius: 8px;border:1px solid #eeeeee;margin-bottom:18px;padding-left:10px;color:#767676;}
+.main .loan .getMes{cursor:pointer;width:95PX;height:36px;margin-left: 12px;border:none;border-radius: 4px;color:#fff;background: #6de3d4;}
+.main .loan .getMes:hover{background: #72fcea;}
+.main .loan .submit{cursor:pointer;width:200px;height: 36px;background:#00abe3;border:none;border-radius: 4px;color:#fff;font-size:16px;}
+.main .loan .submit:hover{background: #04bcf8;}
+.main .loan .lImg1{position: relative;top:-144px;left:106px;}
+.main .loan .lMiddle{position:relative;left:10px;float: left;}
+.main .loan .lImg2{position: relative;top:-1px;left:1px;}
+.main .loan .lRight{position:relative;float:left;left:20px;background: #fff;width:240px;height:306px;border-top: 4px solid #5d9cec;}
+.main .loan .h1{position:relative;top:14px;left:14px;font-size: 18px;width:240px;height:44px;}
+.main .loan .lRt{position: relative;padding-top:24px;padding-left:22px;border-top:1px solid #f0f0f0;}
+.main .loan img{position: relative;top:18px;left:24px;}
+.main .loan .app{position: relative;top:20px;left:8px;}
+.main .loan .app li{float:left;padding:2px 0 0 14px;margin:0;}
+
+.main .partner{clear:both;position:relative;padding-top:20px;top: 130px;width:100%;height:260px;background: #fff;}
+.main .partner h1{float:left;}
+.main .partner span{position: relative;top:8px;left:20px;color:#888888;}
+
+.main .footer{position: relative;top:170px;color:#999999;}
+.main .footer .fHot ul{}
+.main .footer .fHot li{position:relative;width:74px;height:26px;float:left;margin-right: 14px;border:1px solid #dedede;text-align: center;}
+.main .footer .fHot li:hover{background: #F7F7F7;}
+.main .footer .fT {clear:both;top:20px;position: relative;}
+.main .footer .fT li{width:196px;float:left;}
+.main .footer .fTt{float:left;position: relative;}
+.main .footer .about,p{clear:both;position:relative;top:56px;}
+.main .footer .about li{float:left;padding-right: 25px;font-size:16px;}
+.main .footer p{margin-top: 10px;}
+.main .footer img{clear:both;position:relative;top:88px;}
+
+
+
 /*.content .tab .person{background: url(../images/tab.jpg) no-repeat left 30px 20px;color:#000;}*/
 
 
