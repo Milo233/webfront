@@ -6,11 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>无标题文档</title>
     <link href="css/index.css" rel="stylesheet" />
-    <style>
-    </style>
-    <script>
-
-    </script>
+    <script type="text/javascript" src="js/js.js"></script>
+    <style></style>
 </head>
 
 <body>
@@ -174,17 +171,15 @@
             <img src="images/hRight.gif"/>
             <div class="cal">
             <div class="houseCal">
-                <a href="#" >房贷计算器</a>
-                <p>最新利率，精确计算</p>
+                <a href="#" >房贷计算器<br/>最新利率，精确计算</a>
             </div>
             <div class="taxCal">
-                <a href="#" >税费计算器</a>
-                <p>买房税率不糊涂</p>
+                <a href="#" >税费计算器<br/>买房税率不糊涂</a>
             </div>
-            <div class="rong">
-                <a href="#" >融360房贷微信</a>
-                <p>让买房更简单</p>
+            <div id="rong" class="rong">
+                <a href="#" >融360房贷微信<br/>让买房更简单</a>
             </div>
+            <div id="wechat"><img src="images/wechat.gif"/></div>
             </div>
         </div>
     </div>
@@ -254,8 +249,8 @@
             </div>
         </div>
         <div class="cRight">
-            <div class="cTitle"><span>热点</span></div>
-            <div class="cT1">
+            <div class="cRt"><span>热点</span></div>
+            <div class="cT3">
                 <ul>
                     <li><a href="#">• 信用卡办卡条件  你真的都</a> </li>
                     <li><a href="#">• 五一开车加油  刷什么信用</a> </li>
@@ -264,28 +259,116 @@
                     <li><a href="#">• 星巴克时间又到了：小编教你</a> </li>
                 </ul>
             </div>
-            <div class="cImg"><img src="images/card2.jpg"/><br/><span>上海银行中国旅游</span></div>
-            <div class="cImg"><img src="images/card3.jpg"/><br/><span>上海银行中国移动</span></div>
-
-
-
+            <div class="cImg2"><a href="#"><img src="images/hot.gif"/></a></div>
+            <div class="lookup">
+                <a href="#"><span >网点查询</span></a>
+                <a href="#"><span>积分查询</span></a>
+                <a href="#"><span>分期付款</span></a>
+            </div>
         </div>
     </div>
+    <div class="loan wrap">
+        <h1>贷款</h1>
+        <div class="lLeft">
+            <ul>
+                <li><input class="name" type="text" value="  您的称呼" onfocus="if (value =='  您的称呼'){value =''}" onblur="if (value ==''){value='  您的称呼'}"/></li>
+                <li><input class="number"  type="text" value="  您的手机号" onfocus="if (value =='  您的手机号'){value =''}" onblur="if (value ==''){value='  您的手机号'}"/></li>
+                <li><input class="pic"  type="text" value="  图片验证" onfocus="if (value =='  图片验证'){value =''}" onblur="if (value ==''){value='  图片验证'}"></li>
+                <li><input class="message"  type="text" value="  短信验证" onfocus="if (value =='  短信验证'){value =''}" onblur="if (value ==''){value='  短信验证'}"><input class="getMes"  type="button" value="获取验证码"></li>
+                <li><input class="submit"  type="button" value="提交申请"></li>
+            </ul>
+            <img class="lImg1" src="images/pic.jpg"/>
+        </div>
+        <div class="lMiddle">
+            <a href="#"><img class="lImg2" src="images/loan.jpg"/></a>
+        </div>
+        <div class="lRight">
+            <div class="h1"><span>贷款攻略</span></div>
+            <ul class="lRt">
+                <li><a href="#">• 细数校园贷款五宗罪，长势再</a></li>
+                <li><a href="#">• 如何养成良好的个人信用？原</a></li>
+                <li><a href="#">• 【独家测评】阿里车秒贷申请</a></li>
+                <li><a href="#">• 没有打卡工资流水，如何拿到</a></li>
+                <li><a href="#">• 有人在微信上找你借钱，你借</a></li>
+            </ul>
+            <a href="#"><img src="images/cal.gif"/></a>
+            <ul class="app">
+                <li><a href="#">身价计算</a></li>
+                <li><a href="#">芝麻信用</a></li>
+                <li><a href="#">手机贷款</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="partner">
+        <div  class="wrap" >
+            <h1>合作机构</h1>
+            <span>融360平台有超过<strong style="color:red;">2000</strong>家合作机构</span>
+            <img src="images/partner.png"/>
+        </div>
+    </div>
+    <div class="footer wrap">
+        <ul class="fHot">
+            <li class="active">热门推荐</li>
+            <li>热门房贷</li>
+            <li>热门城市</li>
+            <li>贷款工具</li>
+        </ul>
+        <ul class="fT">
+            <li>
+                <ul class="fTt">
+                    <li>账单日和还款日</li>
+                    <li>百度联盟货</li>
+                    <li>招商银行无抵押贷款</li>
+                </ul>
+            </li>
+            <li>
+
+                <ul class="fTt">
+                    <li>新易贷</li>
+                    <li>信用卡安全码</li>
+                    <li>招商银行抵押贷款</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="fTt">
+                    <li>苏宁任性付</li>
+                    <li>交通银行好享贷</li>
+                    <li>广银农村小额贷款</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="fTt">
+                    <li>人人贷可靠吗</li>
+                    <li>二手房交易税额</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="fTt">
+                    <li>mastercard</li>
+                    <li>visa的用途</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="fTt">
+                    <li>信用卡代还</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="about">
+            <li><a href="#">关于融360</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">信贷经理入驻</a></li>
+            <li><a href="#">加入我们</a></li>
+            <li><a href="#">免责声明</a></li>
+            <li><a href="#">信贷员公约</a></li>
+            <li><a href="#">建议与投诉</a></li>
+        </ul>
+        <p>融360贷款 - 焦作小额贷款平台 版权所有</p>
+        <p> Copyright © 2015 Rong360.com Inc. All Rights Reserved. 网络经营许可证 京ICP备12000680号-1京公网安备110108008323号 </p>
+        <img src="images/footer.jpg"/>
+    </div>
 </div>
-<div class=""></div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/><br/><br/><br/><br/><br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-121245
+
+
 </body>
 </html>
