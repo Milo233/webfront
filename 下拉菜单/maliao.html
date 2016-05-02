@@ -1,0 +1,60 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+<META http-equiv='Content-Type' content='text/html; charset=gb2312'>
+<title>QQ菜单打开折叠</title>
+    <style>
+        body{
+            -moz-user-select:none;/*火狐*/
+
+            -webkit-user-select:none;/*webkit浏览器*/
+
+            -ms-user-select:none;/*IE10*/
+
+            -khtml-user-select:none;/*早期浏览器*/
+
+            user-select:none;
+        }
+        ul,li,h2{list-style: none;padding: 0;margin: 0;}
+        #list{width:200px;margin:0 auto;border:1px solid black;}
+        #list h2{height:40px;background:url(ico1.gif) no-repeat 10px center yellow;text-indent: 26px;line-height:40px;cursor:pointer;}
+        #list .active{background:url(ico2.gif) no-repeat 10px center yellow;}
+        .lis ul{display:none;background: pink;border-bottom:1px solid #333;}
+        .lis .hover{background: red;}
+        .lis li{height:30px;background: pink;border-bottom:1px solid #333;text-indent: 40px;line-height:30px;cursor:pointer;}
+
+    </style>
+<script src="js.js">
+
+</script>
+</head>
+<body>
+<ul id="list">
+    <li class="lis">
+        <h2>我的好友</h2>
+        <ul>
+            <li>张三</li>
+            <li>张四</li>
+            <li>张武</li>
+            <li>张六</li>
+        </ul>
+    </li>
+    <li class="lis">
+        <h2>我的明星</h2>
+        <ul>
+            <li>刘翔</li>
+            <li>姚明</li>
+            <li>李连杰</li>
+        </ul>
+    </li>
+    <li class="lis">
+        <h2>黑名单</h2>
+        <ul>
+            <li>广告</li>
+            <li>骗子</li>
+            <li>骚扰</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
