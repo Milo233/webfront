@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jq弹窗</title>
+<style>
+    #login{display: none;width:200px;height:200px;border:1px solid black;position: absolute;top:}
+</style>
+    <script type="text/javascript" src="jq/jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                $("#login").css("display","block");
+            });
+            var login=$("#login");
+            $("#close").click(function(){
+                $("#login").css("display","none");
+            });
+            login.css('left' , ($(window).width() - login.outerWidth())/2 );
+            login.css('top' , ($(window).height() - login.outerHeight())/2 );//数值不用引号
+            $(window).on('resize scroll',function(){
+                //resize:调整窗口大小，scroll：用滚轮滑动。；两个事件触发同一个函数
+                login.css('left' , ($(window).width() - login.outerWidth())/2 );
+                login.css('top' , ($(window).height() - login.outerHeight())/2 + $(window).scrollTop());
+                //$(window).height():可以看见的窗口的高度，login.outHeight():弹窗的大小
+                //top:是弹窗上边到浏览器最顶部的距离，当拖动滚动条时，为了不让弹窗滚动，需要加上滑动的距离，从而相对窗口没有动。
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+<button id="btn">点击</button>
+<div id="login">
+    <span>用户：</span><input type="text" value="123" onfocus="if(value=='123'){value=''}" onblur="if(value==''){value='123'}" style="color:red;"><br/>
+    <span>密码：</span><input type="password">
+    <input id="close" type="button" value="X">
+
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>
