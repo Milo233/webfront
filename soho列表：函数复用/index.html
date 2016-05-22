@@ -1,0 +1,88 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>视频列表显示</title>
+    <style>
+        body{font-family:"宋体";}
+        p,body,h2,ul,li,span{margin: 0;padding:0;font-size:12px;}
+        ul,li{list-style: none;}
+        .box{width:255px;height:386px;background:#dee7e7;margin: 0 auto;padding:10px 7px 0 6px;position: relative;}
+        .box h2{left:14px;position: relative;line-height:18px;font-size: 18px;top:-4px;}
+        #nav{position: relative;}        
+        #nav1 li{float: left;width:146px;height:24px;border-left: none;border-right: none;border-bottom:1px solid #94bdd6;border-top:1px solid #dee7e7;}
+        #nav2 li{width:35px;height:24px;float: left;border-top:1px solid #94bdd6;border-bottom:1px solid #94bdd6;border-left:1px solid #94bdd6;text-align: center;line-height: 24px;cursor:pointer;}
+        #nav2 #last{border-right:1px solid #94bdd6;}
+        #nav2 .active{background: #fff;border-bottom: 1px solid #fff;}
+
+        #main{width:255px;position: relative;clear: both;}
+        #main li{height:19px;border-bottom: 1px dotted #fff;overflow: hidden;padding: 8px 0 0 8px;cursor:pointer;}
+        #main .active{height:80px;background:#fff;border-bottom: none;}
+        #main span{margin-left: 12px;}
+        #main .show{display: none;}
+        #main .show .show1{float:left;padding:0 10px 0 10px;}
+        #main .show .show2{left:72px;top: 20px;position: relative;}
+    </style>
+    <script>
+        window.onload=function(){
+            var nav=document.getElementById("nav2");
+            var main=document.getElementById("main");
+            var aLi1=nav.getElementsByTagName("li");
+            var aLi2 =main.getElementsByTagName("li");
+            fn1("nav2");
+            fn1("main");
+            function fn1(id){
+                var oDiv=document.getElementById(id);
+                var aLi=oDiv.getElementsByTagName("li");
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].index=i;
+                aLi[i].onmouseover=function(){
+                    for(var j=0;j<aLi.length;j++){
+                        aLi[j].className="";
+                    }
+                    this.className="active";
+                }
+            }
+            }
+
+
+        };
+    </script>
+</head>
+
+<body>
+<div class="box">
+
+    <div id="nav">
+        <ul id="nav1">
+        <li><h2>观看排行榜</h2></li>
+    </ul>
+        <ul id="nav2">
+            <li class="li2 active">每日</li>
+            <li class="li2">每周</li>
+            <li id="last" class="li2">全部</li>
+        </ul>
+    </div>
+    <div id="main">
+        <ul>
+            <li class="active">
+                <img src="images/num1.png" style="float: left;"/><span>解密：关于地球与人类的一千零一问</span>
+                <div class="show">
+                    <img class="show1" src="app1.jpg" style="width:86px;height: 66px;"/><p>解密：关于地球与人类的一千零一问</p> <img class="show2" src="play.jpg" />
+                </div>
+            </li>
+            <li><img src="images/num2.png" /><span>经典传奇：探索全世界重大历史事件..</span></li>
+            <li><img src="images/num3.png" /><span>眼界：展现普通人的曲折命运和动人..</span></li>
+            <li><img src="images/num4.png" /><span>档案（BTV）：惊人事件和传奇背..</span></li>
+            <li><img src="images/num5.png" /><span>30个令人目瞪口呆的惊奇榜单！世..</span></li>
+            <li><img src="images/num6.png" /><span>身边的毛泽东：警卫员解密毛泽东密..</span></li>
+            <li><img src="images/num7.png" /><span>新电影传奇：每一部电影都有自己的..</span></li>
+            <li><img src="images/num8.png" /><span>档案（上视纪实频道）：解密档案中..</span></li>
+            <li><img src="images/num9.png" /><span>探寻传世国宝的千古传奇</span></li>
+            <li><img src="images/num10.png" /><span>纪实系列：讲述社会百态，透视事实..</span></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

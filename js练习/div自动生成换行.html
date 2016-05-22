@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <style>
+        #squ{
+            text-align: center;
+            line-height: 50px;
+            width:500px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var squ=document.getElementById("squ");
+            var aDiv=squ.getElementsByTagName("div");
+            var aCol=[["red"],["yellow"],["blue"],["green"]];
+            for( var i=0;i<100;i++){
+                var n= i%4;
+                squ.innerHTML +="<div>" + i + "</div>";
+                switch(n){
+                    case 0:
+                        aDiv[i].style.cssText="background:red;width:50px;height:50px;float:left;";
+                        break;
+                    case 1:
+                        aDiv[i].style.cssText="background:yellow;width:50px;height:50px;float:left;";
+                        break;
+                    case 2:
+                        aDiv[i].style.cssText="background:blue;width:50px;height:50px;float:left;";
+                        break;
+                    case 3:
+                        aDiv[i].style.cssText="background:green;width:50px;height:50px;float:left;";
+                        break;
+                }
+               /*if(i%10==0){
+                    aDiv[i].style.float="none";
+
+                }*/
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+<ul id="squ"></ul>
+</body>
+</html>

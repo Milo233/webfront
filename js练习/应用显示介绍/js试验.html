@@ -1,0 +1,85 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+
+    <style>
+        li{
+            width:100px;height:120px;float:left;margin-right:30px;
+            background: #fff;position: relative;
+            list-style: none;text-align:center;
+        }
+        img{
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        div{
+            width:200px;height:100px;
+            background: #DFE6F0;position:absolute;
+            top:120px;left:10px;display:none;
+            border-radius: 8px;
+        }
+        .top{
+            position:absolute;
+            width:0;
+            height:0;
+            line-height: 0;
+            border-bottom: 10px solid #DFE6F0;
+            border-right: 10px solid #fff;
+            border-left: 10px solid #fff;
+            left:25px;
+            top:-10px;
+        }
+        h3{
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<script>
+window.onload=function(){
+    var oUl=document.getElementById("list");
+    var aLi=oUl.getElementsByTagName("li");
+    var len=aLi.length;
+    for(var i=0;i<len;i++){
+        aLi[i].onmouseover=function(){
+            this.getElementsByTagName("div")[0].style.display="block";
+        }//在aLi[i]中查找标签div。第一个、也只有一个就是i对应 的div！！
+        aLi[i].onmouseout=function(){
+            this.getElementsByTagName("div")[0].style.display="none";
+        }
+
+    }
+    };
+</script>
+<ul id="list">
+    <li>
+        <img src="app1.jpg" style="width: 50px;height:50px;">
+        <h3>360云盘</h3>
+        <div>
+            <span class="top"></span>
+            <h3>360云盘</h3>
+            <p>2T 大空间<br/>跨平台数据同步</p>
+        </div>
+    </li>
+    <li>
+        <img src="app2.jpg" style="width: 50px;height:50px;">
+        <h3>Youtube</h3>
+        <div>
+            <span class="top"></span>
+            <h3>Youtube</h3>
+            <p>免费高清资源<br/>丰富视频网站</p>
+        </div>
+    </li>
+    <li><img src="app3.jpg" style="width: 50px;height:50px;"><h3>美颜相机</h3><div><span class="top"></span>            <h3>美图秀秀</h3>
+        <p>一键磨皮变瘦<br/>逗萌搞笑贴纸</p></div></li>
+    <li><img src="app4.jpg" style="width: 50px;height:50px;"><h3>云笔记</h3><div><span class="top"></span>            <h3>云笔记</h3>
+        <p>热门云笔记应用<br/>多平台快速同步</p></div></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <style>
+        #dia{
+            height: 400px;
+            width: 300px;
+            border: 1px solid black;
+            overflow:auto;//高度上超出后出现滑动条
+            table-layout:fixed; word-break: break-all;
+            //实现多种浏览器下英文或者数字的自动换行
+        }
+        #enter{
+            height:50px;
+            width:300px;
+            border:1px solid black;
+        }
+        #head{
+            margin-top:10px;
+            margin-left: 10px;
+
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var send = document.getElementById("send");
+            var tex = document.getElementById("tex");
+            var dia = document.getElementById("dia");
+            var onOff = false;
+            var head = document.getElementById("head");
+            var pic = ["bian1.jpg", "bian2.jpg"];
+            head.onclick = function () {
+                if (onOff) {
+                    head.src = pic[0];
+                    onOff = false;
+                } else {
+                    head.src = pic[1];
+                    onOff = true;
+                }
+            }
+            send.onclick = function () {
+                if(tex.value==""){
+                    window.alert("还没输入呢~~~")
+                }else{
+                    if (onOff) {
+                        dia.innerHTML = "<img  src='bian2.jpg' style='height: 30px;width: 30px;'/>" + ":" + tex.value + "<br/>" + dia.innerHTML;
+                    } else {
+                        dia.innerHTML = "<img  src='bian1.jpg' style='height: 30px;width: 30px;'/>" + ":" + tex.value + "<br/>" + dia.innerHTML;
+                    }
+                }
+                                tex.value = "";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<div id="dia" ></div>
+<div id="enter">
+    <img id="head" src="bian1.jpg" style="border-radius:10px;height: 30px;width: 30px;"/>
+    <input id="tex" type="text" >
+    <input id="send" type="button" value="发送">
+</div>
+
+</body>
+</html>
