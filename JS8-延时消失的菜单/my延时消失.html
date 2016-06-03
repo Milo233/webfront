@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <title>123123</title>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <style>
+        ul,li{list-style: none;padding: 0;margin: 0;float: left;}
+        #test{width:500px;height: 60px;background: pink;}
+        #test span{display:inline-block;width:100px;height:60px;background: red;line-height: 60px;text-align: center;}
+        li{width:98px;text-align: center;height: 40px;background: pink;margin-left:5px;line-height: 40px;display: none;}
+        #li1{position:absolute;left:6px;}
+        #li2{position:absolute;left:112px;}
+        #li3{position:absolute;left:216px;}
+    </style>
+    <script type="text/javascript">
+        window.onload=function() {
+            var aNav = document.getElementsByTagName("span");
+            var aLi = document.getElementsByTagName("li");
+            var timer = null;
+            for (var i = 0; i < 3; i++) {
+                aNav[i].index = i;
+                aNav[i].onmouseover = function () {
+                    for(var j=0;j<3;j++){
+                        //解决导航栏内部移动太快时没法收起li的bug
+                        //bug应该是上一个timer还没运行完就开了新的timer，产生了冲突
+                        aLi[j].style.display ='none';
+                    }
+                    var n = this.index;
+                    aLi[this.index].style.display = "block";
+                    this.onmouseout = function () {
+                        clearTimeout(timer);
+                        timer = setTimeout(function () {
+                            aLi[n].style.display = 'none';
+                        }, 500);
+                    };
+                };
+            }
+            for(var j=0;j<3;j++){
+                aLi[j].index=j;
+                aLi[j].onmouseover=function(){
+                    clearTimeout(timer);
+                    this.style.display="block";
+                    this.onmouseout=function(){
+                        this.style.display="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="test">
+    <span>首页</span>
+    <span>关于</span>
+    <span>作品</span>
+</div>
+<ul>
+    <li id="li1">111</li>
+    <li id="li2">222</li>
+    <li id="li3">333</li>
+</ul>
+</body>
+</html>
