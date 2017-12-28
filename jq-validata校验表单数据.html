@@ -5,7 +5,7 @@
 <title>菜鸟教程(runoob.com)</title>
 <script src="jq/jquery-1.12.3.min.js"></script>
 <script src="js/jquery-validate/jquery.validate.min.js"></script>
-
+<script src="js/jquery-validate/messages_zh.js"></script>
 <script>
 $.validator.setDefaults({
     submitHandler: function() {
@@ -47,9 +47,6 @@ $().ready(function() {
 	      agree: "required"
 	    },
 	    messages: {
-		creditcard:{
-			required: "请输入您的card"
-		},
 	      firstname: "请输入您的名字",
 	      lastname: "请输入您的姓氏",
 	      username: {
@@ -64,18 +61,23 @@ $().ready(function() {
 	        required: "请输入密码",
 	        minlength: "密码长度不能小于 5 个字母",
 	        equalTo: "两次密码输入不一致"
-	      },
+	      }, // 校验不过时的提示
+          creditcard:{
+	        required: "请输入您的信用卡号"
+          },
 	      email: "请输入一个正确的邮箱",
 	      agree: "请接受我们的声明",
 	      topic: "请选择两个主题"
+          ,creditcard: "请输入一个合法的信用卡号"
 	    }
 	});
 });
 </script>
 <style>
-.error{
-	color:red;
-}
+  /* 校验不通过时提示文字的颜色 */
+  .error{
+    color:red;
+  }
 </style>
 </head>
 <body>
@@ -91,7 +93,7 @@ $().ready(function() {
       <input id="lastname" name="lastname" type="text">
     </p>
     <p>
-      <label for="creditcard">creditcard</label>
+      <label for="creditcard">信用卡</label>
 	  <!-- still 没搞清楚到底是name还是type控制合法性校验的:P -->
       <input id="creditcard" name="creditcard" type="">
     </p>
@@ -130,12 +132,88 @@ $().ready(function() {
       <label for="topic_digester">
         <input type="checkbox" id="topic_digester" value="digester" name="topic[]">Mailing list digester
       </label>
-      <label for="topic" class="error" style="display:none">至少选择两个</label>
     </fieldset>
+    <label for="topic" class="error" style="display:none">至少选择两个</label>
     <p>
       <input class="submit" type="submit" value="提交">
     </p>
   </fieldset>
 </form>
+<p>错误信息会紧贴着被校验的输入框，会把元素挤开</p>
+<form action="" method="post" id="numForm" target="_blank">
+  <span>最多2位小数</span>
+  <input class="form-control" type="text" id="cash" name="cash">
+  <br/>
+  <spam>digits：整数</spam>
+  <input class="form-control" type="text" id="int" name="int">
+  <button type="button" id="btn_sub" onclick="check()" class="btn btn-primary">确认充值</button>
+</form>
+<button type="button" id="reset" onclick="run()" class="btn btn-primary">重置</button>
+<script>
+  function run() {
+      $("#numForm")[0].reset();
+  }
+  function check() {
+      var pass = $("#numForm").valid();
+      console.log(pass);
+      if (pass){
+          alert("it is ok");
+      }else {
+          alert("go back to update the form");
+      }
+  }
+    //自定义validate验证输入的数字小数点位数不能大于两位
+    jQuery.validator.addMethod("minNumber",function(value, element){
+        var returnVal = true;
+        inputZ=value;
+        var ArrMen= inputZ.split(".");    //截取字符串
+        if(ArrMen.length==2){
+            if(ArrMen[1].length>2){    //判断小数点后面的字符串长度
+                returnVal = false;
+                return false;
+            }
+        }
+        return returnVal;
+    },"小数点后最多为两位");         //验证错误信息
+
+    //提交表单验证，并ajax传值
+    $("#numForm").validate({
+        //验证规则
+        rules: {
+            cash: {
+                required: true,    //要求输入不能为空
+                number: true,     //输入必须是数字
+                min: 0.01,          //输入的数字最小值为0.01，不能为0或者负数
+                max: 100000,
+                minNumber: $("#cash").val()    //调用自定义验证
+            },
+            int: {
+                required: true,
+                number: true,
+                digits: true,// 整数
+                range:[5,10] // 最小5 最大10
+            }
+        },
+
+        //错误提示信息
+        messages: {
+            cash: {
+                required: "请填写充值金额",
+                number: "请正确输入金额",
+                min: "输入最小金额为0.01",
+                max: "最大数值不大于100000",
+                length: "输入数字最多小数点后两位"
+            },
+            int: {
+                required: "请填写一个整数",
+                number: "请正确输入整数",
+                min: "输入最小金额为0.01",
+                max: "最大数值不大于100000",
+                digits: "只能输入整数"
+            }
+        }
+    });
+
+</script>
 </body>
 </html>
