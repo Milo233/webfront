@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 背景色css 和评分无关 -->
+  <!-- <link type="text/css" rel="stylesheet" href="demo/css/application.css"> -->
+  
+  <script type="text/javascript" src="demo/js/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.raty.min.js"></script>
+  
+</head>
+
+<body>
+
+  <div id="half-demo"></div>
+  <div id="unchange-able"></div>
+
+<button type="button" onclick="showScore()">显示分数</button>
+  <script type="text/javascript">
+    <!-- $.fn.raty.defaults.path = 'lib/img'; -->
+    $('#half-demo').raty({
+      path: 'demo/img',
+      cancelOff: 'cancel-off-big.png',
+      cancelOn: 'cancel-on-big.png',
+      <!-- half: true, //允许半星 -->
+      size: 24,
+      starHalf: 'star-half-big.png',
+      starOff: 'star-off-big.png',
+      starOn: 'star-on-big.png',
+      click: function(score, evt) {
+        alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt);
+      }
+    });
+	$('#unchange-able').raty({
+      path: 'demo/img',
+      cancelOff: 'cancel-off-big.png',
+      cancelOn: 'cancel-on-big.png',
+      half: true, //允许半星
+      size: 24,
+	  score: 3.5, //设置默认值
+	  readOnly: true, // 只读  不许修改
+      starHalf: 'star-half-big.png',
+      starOff: 'star-off-big.png',
+      starOn: 'star-on-big.png'
+    });
+	function showScore(){
+		var score = $("#half-demo").raty("score");
+		alert(score);
+	}
+	$(document).ready(function(){ 
+　　	$("#half-demo").raty("score",2.5);
+	}); 
+	
+  </script>
+</body>
+<pre>
+$('div').raty('score');                  // Get the current score.
+$('div').raty('score', number);          // Set the score.
+$('div').raty('click', number);          // Click on some star.
+$('div').raty('readOnly', boolean);      // Change the read-only state.
+$('div').raty('cancel', boolean);        // Cancel the rating. The last param force the click callback
+$('div').raty('reload');                 // Reload the rating with the current configuration.
+$('div').raty('set', { option: value }); // Reset the rating with new configurations.
+$('div').raty('destroy');                // Destroy the bind and give you the raw element.
+$('div').raty('move', number);           // Move the mouse to the given score point position.
+</pre>
+</html>
