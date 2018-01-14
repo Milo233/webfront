@@ -1,0 +1,58 @@
+<html>
+<body>
+  <meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+	<p>输入框的数据和data数据双向绑定 v-model</p>
+	<input type="text" v-model="msg"/>
+	<!-- 三元表达式 为空字符串时取给定的值 -->
+	{{msg?msg:"hello"}}<br/>
+	<!-- 一次绑定 页面加载后不再改变 -->
+	<p v-once>{{msg}}</p>
+	<p v-html>{{msg}}</p>
+	{{haha.name}}
+	<hr>
+	<input type="number" v-model="price"/>
+	{{sum}}
+	<!-- sum方法返回price+10 -->
+	<hr>
+	{{msg}}
+</div>
+<button type="button" onclick="updateVM()">HHHH</button>
+<script>
+var mess = {
+	name : "zhangyuan"
+};
+var vm = new Vue({
+	el:"#app",
+	data:{
+		msg:'<h1>头部</h1>',
+		price: 100,
+		haha:mess, // 对象
+		info:'lalalala'
+	},
+	computed:{
+		sum: function () {
+			return this.price * 0.1;
+		}
+	}
+})
+//alert(vm.$el);//[object HTMLDivElement] id为app的div对象
+// vm.$data 就是vm里data对应的对象
+//alert(vm.$data.info); lalalala
+// 监听数据变化
+vm.$watch('msg', function(newVal, oldVal){
+	console.log(newVal, oldVal);
+})
+
+
+function updateVM(){
+	vm.$data.msg= 123131321;
+}
+
+</script>
+
+
+</body>
+</html>
