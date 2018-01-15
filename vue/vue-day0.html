@@ -2,35 +2,76 @@
 <body>
   <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <div id="app">
 	<p>输入框的数据和data数据双向绑定 v-model</p>
 	<input type="text" v-model="msg"/>
 	<!-- 三元表达式 为空字符串时取给定的值 -->
-	{{msg?msg:"hello"}}<br/>
+	1.{{msg?msg:"hello"}}<br/>
 	<!-- 一次绑定 页面加载后不再改变 -->
-	<p v-once>{{msg}}</p>
-	<p v-html>{{msg}}</p>
-	{{haha.name}}
+	<p v-once>2.{{msg}}</p>
+	<p v-html>3.{{msg}}</p>
+	4.{{ha.name}}
 	<hr>
-	<input type="number" v-model="price"/>
+	5.<input type="number" v-model="price"/>
 	{{sum}}
 	<!-- sum方法返回price+10 -->
 	<hr>
-	{{msg}}
+	6.{{msg}}<br/>
+	7.<template v-if="true">
+		true
+	</template><!-- v-else要跟在v-if后面 template不会被旋绕出来-->
+	<div v-else>false</div>
+	<hr>
+	<template v-for="(key,val,index) in message">
+		{{ index }}:{{val}}=={{key}}<br/>
+	</template>
+	8<br>
+	<!--<template v-for="(key,val) in goods">
+		<div v-for="a in val.type">
+			{{key}}{{a}}
+		</div>
+	</template>-->
+	<!-- v-bind 避免404错误 v-bind可以省略-->
+	<!-- v-on: 可以用@替代 绑定方法 传参时要手动加上事件源 ？不知道用处？ -->
+	<img :src="src" @click="add(this, $event)" class="pointer"/>
+	<a v-bind:href="href">Click!!</a>
 </div>
 <button type="button" onclick="updateVM()">HHHH</button>
+<style>
+	.pointer{
+		cursor:pointer;
+	}
+</style>
 <script>
 var mess = {
-	name : "zhangyuan"
+	name : "zhangyuan",
+	age : 123
 };
 var vm = new Vue({
 	el:"#app",
 	data:{
 		msg:'<h1>头部</h1>',
 		price: 100,
-		haha:mess, // 对象
-		info:'lalalala'
+		ha:mess, // 对象
+		message :{
+			name : "zhangyuan",
+			age : 123
+		},
+		info:'lalalala',
+		goods:[
+			{name:'apple',price:40,type:['white1','black2']},
+			{name:'oragle',price:50,type:['gray3','pink4']},
+		],
+		src: "http://www.maiziedu.com/images/index/logo_greenx2.png",
+		href: "https://www.sohu.com"
+	},
+	methods:{
+		add: function (e, event){
+			alert(new Date())
+			//$(e).removeClass("pointer");
+			//$(this).siblings().removeClass("enable");
+		}
 	},
 	computed:{
 		sum: function () {
