@@ -33,9 +33,25 @@
 		</div>
 	</template>-->
 	<!-- v-bind 避免404错误 v-bind可以省略-->
-	<!-- v-on: 可以用@替代 绑定方法 传参时要手动加上事件源 ？不知道用处？ -->
+	<!-- v-on: 可以用@替代 绑定方法 传参时要手动加上事件源  -->
 	<img :src="src" @click="add(this, $event)" class="pointer"/>
-	<a v-bind:href="href">Click!!</a>
+	<a v-bind:href="href" target="_blank">查看Vue文档</a>
+	<a href="http://www.baidu.com" @click.prevent>阻止默认事件</a>
+	<input type="text" @keyup.13="keyup" value="keyup方法">
+	
+	<template v-for="(key,val,index) in message.list">
+		<br/>{{ index }}:{{val.name}}=={{key}}
+	</template>
+	<div :style="[true?style1:style2]">三元表达式判断绑定样式</div><hr>
+	<div :style="[style1, style2]">
+		样式绑定{{info.toUpperCase()}} == {{info.toLowerCase()}} 大小写转换
+	</div>
+	<!-- <div v-bind:class="[class1,isTrue?'class2':'class3']">三元表达式判断</div> -->
+	<select>
+		<option :value='select.age' v-for='select in selects'>{{select.name}}</option>
+	</select>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
 <button type="button" onclick="updateVM()">HHHH</button>
 <style>
@@ -51,10 +67,22 @@ var mess = {
 var vm = new Vue({
 	el:"#app",
 	data:{
+		select : 0,
+		selects: [
+			{name:'zhangyuan',age:13},
+			{name:'milo',age:33},
+			{name:'jey',age:28}
+		],
+		style1:{background:'pink'},
+		style2:{fontSize:'50px'},
 		msg:'<h1>头部</h1>',
 		price: 100,
 		ha:mess, // 对象
 		message :{
+			list : {
+				arr1:{name:'数组1'},
+				arr2:{name:'数组2'}
+			},
 			name : "zhangyuan",
 			age : 123
 		},
@@ -64,13 +92,16 @@ var vm = new Vue({
 			{name:'oragle',price:50,type:['gray3','pink4']},
 		],
 		src: "http://www.maiziedu.com/images/index/logo_greenx2.png",
-		href: "https://www.sohu.com"
+		href: "https://wakeupmypig.github.io/jw_blog/html/Vue.js/Vue方法篇2.html"
 	},
 	methods:{
 		add: function (e, event){
 			alert(new Date())
 			//$(e).removeClass("pointer");
 			//$(this).siblings().removeClass("enable");
+		},
+		keyup: function (){
+			alert("key up method");
 		}
 	},
 	computed:{
