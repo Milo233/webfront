@@ -24,6 +24,22 @@ function calc(){
 }
 calc();
 setInterval("calc()", 1000);
+
+var lastClick = 0;
+document.addEventListener('click', function(){
+    // 单击 随机出现mua  一定概率出现love you
+    var now = new Date().getTime();
+	var r = Math.random();
+	if(r > 0.5){
+		alert("mua~");
+	}else if(r < 0.2){
+		if(now - lastClick < 500){
+			alert("爱你！！！");
+		}
+	}
+	lastClick = now;
+})
+
 </script>
 </body>
 </html>
